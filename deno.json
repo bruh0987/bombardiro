@@ -11,9 +11,9 @@
 		"jsxImportSource": "svelte"
 	},
     "tasks": {
-        "dev": "deno run -A --unstable-sloppy-imports npm:vite@^5.4.11 dev",
-        "build": "deno run -A --unstable-sloppy-imports npm:vite@^5.4.11 build",
-        "preview": "deno run -A --unstable-sloppy-imports npm:vite@^5.4.11 preview",
+        "dev": "deno run -A --unstable-sloppy-imports npm:vite@^6.0.0 dev",
+        "build": "deno run -A --unstable-sloppy-imports npm:vite@^6.0.0 build",
+        "preview": "deno run -A --unstable-sloppy-imports npm:vite@^6.0.0 preview",
         "check": "deno run -A --unstable-sloppy-imports npm:svelte-check --tsconfig ./tsconfig.json"
     },
 	"imports": {

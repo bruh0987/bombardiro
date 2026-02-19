@@ -4,6 +4,7 @@ import { defineConfig, type Plugin } from 'vite';
 
 const wsPlugin: Plugin = {
     name: 'ws-server',
+    apply: 'serve',
     configureServer(server) {
         server.httpServer?.on('upgrade', async (req, socket, head) => {
              // Only load ws server on upgrade request

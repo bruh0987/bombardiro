@@ -1,0 +1,27 @@
+Task build deno run -A --unstable-sloppy-imports npm:vite@^6.0.0 build
+[36mvite v6.4.1 [32mbuilding SSR bundle for production...[36m[39m
+transforming...
+9:52:50 PM [vite-plugin-svelte] src/lib/components/modules/Logic.svelte:61:12 Buttons and links should either contain text or have an `aria-label`, `aria-labelledby` or `title` attribute
+https://svelte.dev/e/a11y_consider_explicit_label
+59:         <div class="flex flex-col items-center gap-1">
+60:             <div class="font-bold text-xs text-stone-400">Q</div>
+61:             <button class="w-8 h-12 bg-stone-300 rounded shadow-[inset_0_-2px_4px_rgba(0,0,0,0.5)] border border-stone-500 relative transition-all"
+                         ^
+62:                 onclick={() => q = !q}>
+63:                 <div class="absolute w-6 h-6 bg-stone-600 rounded shadow-md left-1 transition-all duration-200"
+[32mΓ£ô[39m 227 modules transformed.
+rendering chunks...
+error: Uncaught (in worker "") (in promise) Error: Invalid export 'rooms' in /api/ws (valid exports are GET, POST, PATCH, PUT, DELETE, OPTIONS, HEAD, fallback, prerender, trailingSlash, config, entries, or anything with a '_' prefix)
+			throw new Error(`Invalid export '${key}'${file ? ` in ${file}` : ''} (${hint})`);
+			      ^
+    at validate (file:///C:/Users/igi/Desktop/bombardiro/node_modules/.pnpm/@sveltejs+kit@2.52.2_@svelt_f3b67f99c9e32cd3a87dbc6b2bc0de02/node_modules/@sveltejs/kit/src/utils/exports.js:21:10)
+    at analyse_endpoint (file:///C:/Users/igi/Desktop/bombardiro/node_modules/.pnpm/@sveltejs+kit@2.52.2_@svelt_f3b67f99c9e32cd3a87dbc6b2bc0de02/node_modules/@sveltejs/kit/src/core/postbuild/analyse.js:186:2)
+    at analyse (file:///C:/Users/igi/Desktop/bombardiro/node_modules/.pnpm/@sveltejs+kit@2.52.2_@svelt_f3b67f99c9e32cd3a87dbc6b2bc0de02/node_modules/@sveltejs/kit/src/core/postbuild/analyse.js:109:38)
+    at async file:///C:/Users/igi/Desktop/bombardiro/node_modules/.pnpm/@sveltejs+kit@2.52.2_@svelt_f3b67f99c9e32cd3a87dbc6b2bc0de02/node_modules/@sveltejs/kit/src/utils/fork.js:23:16
+Γ£ù Build failed in 11.54s
+error during build:
+[vite-plugin-sveltekit-compile] Failed with code 1
+    at NodeWorker.<anonymous> (file:///C:/Users/igi/Desktop/bombardiro/node_modules/.pnpm/@sveltejs+kit@2.52.2_@svelt_f3b67f99c9e32cd3a87dbc6b2bc0de02/node_modules/@sveltejs/kit/src/utils/fork.js:65:13)
+    at NodeWorker.emit (ext:deno_node/_events.mjs:436:20)
+    at NodeWorker.#pollControl (node:worker_threads:335:20)
+    at eventLoopTick (ext:core/01_core.js:187:7)

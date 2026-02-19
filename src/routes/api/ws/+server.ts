@@ -2,7 +2,9 @@ import type { RequestHandler } from './$types';
 
 // Store verified connections
 // Map<RoomID, Set<WebSocket>>
-export const rooms = new Map<string, Set<WebSocket>>();
+// This variable seems to be just for local use or debugging?
+// SvelteKit +server.ts cannot export arbitrary variables.
+const rooms = new Map<string, Set<WebSocket>>();
 
 export const GET: RequestHandler = async ({ request, locals }) => {
 	const upgrade = request.headers.get('upgrade');
