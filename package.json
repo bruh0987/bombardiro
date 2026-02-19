@@ -1,0 +1,38 @@
+{
+	"name": "bombardiro",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check",
+		"check:watch": "svelte-kit sync && svelte-check --watch",
+		"db:push": "npx drizzle-kit push",
+		"db:generate": "npx drizzle-kit generate",
+		"db:migrate": "npx drizzle-kit migrate",
+		"db:studio": "npx drizzle-kit studio"
+	},
+	"dependencies": {
+		"@deno/svelte-adapter": "^0.1.1"
+	},
+	"devDependencies": {
+		"@libsql/client": "^0.15.15",
+		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/kit": "^2.49.1",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"@tailwindcss/forms": "^0.5.10",
+		"@tailwindcss/typography": "^0.5.19",
+		"@tailwindcss/vite": "^4.1.17",
+		"@types/node": "^24",
+		"drizzle-kit": "^0.31.8",
+		"drizzle-orm": "^0.45.0",
+		"svelte": "^5.45.6",
+		"svelte-check": "^4.3.4",
+		"tailwindcss": "^4.1.17",
+		"typescript": "^5.9.3",
+		"vite": "^6.0.0"
+	}
+}

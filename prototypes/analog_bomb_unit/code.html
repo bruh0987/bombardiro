@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DEFUSE INTERFACE - MODEL X-82</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf1720",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211112",
+                        "industrial-gray": "#2d2d2d",
+                        "olive-drab": "#3c4033",
+                        "terminal-black": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.segment-glow {
+    text-shadow: 0 0 10px rgba(207, 23, 32, 0.7)
+    }
+.inner-bezel {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6), inset -2px -2px 4px rgba(255, 255, 255, 0.1)
+    }
+.screw-head {
+    width: 12px;
+    height: 12px;
+    background: #444;
+    border-radius: 50%;
+    position: relative
+    }
+.screw-head::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #111;
+    transform: translatey(-50%) rotate(45deg)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-display text-gray-900 antialiased min-h-screen flex items-center justify-center p-4" style="background-color: #2b2b2b; min-height: max(884px, 100dvh);">
+<!-- MAIN CHASSIS -->
+<div class="relative w-full max-w-md rounded-xl border-[6px] border-[#1a1a1a] shadow-2xl p-6 overflow-hidden" style="background-color: #2d2d2d;">
+<!-- CORNER SCREWS -->
+<div class="absolute top-3 left-3 screw-head"></div>
+<div class="absolute top-3 right-3 screw-head"></div>
+<div class="absolute bottom-3 left-3 screw-head"></div>
+<div class="absolute bottom-3 right-3 screw-head"></div>
+<!-- HEADER / PLATE -->
+<div class="mb-6 flex flex-col items-center border-b border-black/30 pb-4">
+<span class="text-[10px] tracking-[0.3em] text-gray-500 font-bold uppercase mb-1">Restricted Access - Dept. of Defense</span>
+<h1 class="text-white text-xl font-bold tracking-tighter">ORDNANCE UNIT: X-82 DELTA</h1>
+<div class="mt-2 flex gap-2">
+<div class="h-2 w-8 bg-primary rounded-sm shadow-[0_0_5px_#cf1720]"></div>
+<div class="h-2 w-2 bg-gray-600 rounded-sm"></div>
+<div class="h-2 w-2 bg-gray-600 rounded-sm"></div>
+</div>
+</div>
+<!-- MODULE 1: THE TIMER (7-SEGMENT LED) -->
+<div class="bg-terminal-black inner-bezel rounded-lg p-6 mb-8 relative group">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[9px] text-gray-500 font-bold uppercase tracking-widest">DETONATION_TIMER // SECS</span>
+<span class="material-symbols-outlined text-primary text-sm animate-pulse">warning</span>
+</div>
+<div class="flex justify-center gap-4 py-2">
+<div class="flex flex-col items-center">
+<span class="text-6xl font-bold text-primary segment-glow leading-none tracking-widest">03</span>
+<span class="text-[10px] text-primary/50 font-bold mt-1">MIN</span>
+</div>
+<span class="text-6xl font-bold text-primary segment-glow leading-none">:</span>
+<div class="flex flex-col items-center">
+<span class="text-6xl font-bold text-primary segment-glow leading-none tracking-widest">00</span>
+<span class="text-[10px] text-primary/50 font-bold mt-1">SEC</span>
+</div>
+</div>
+<!-- GLARE EFFECT -->
+<div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none rounded-lg"></div>
+</div>
+<!-- MODULE 2: WIRE TERMINAL -->
+<div class="bg-[#252525] border-2 border-black/40 rounded-lg p-4 mb-8">
+<div class="flex justify-between items-center mb-4">
+<span class="text-[10px] text-gray-400 font-bold uppercase">MODULE 02: SEQUENCE SHUNT</span>
+<span class="text-[10px] text-gray-500 font-mono italic">REF: FM-21-11</span>
+</div>
+<div class="flex justify-around items-center h-32 bg-terminal-black/40 rounded inner-bezel px-4 py-2">
+<!-- Red Wire -->
+<div class="h-full flex flex-col items-center group cursor-pointer">
+<div class="w-3 bg-[#444] h-2 rounded-t"></div>
+<div class="w-2 h-full bg-primary border-x border-black/20 group-hover:brightness-125 transition-all"></div>
+<div class="w-3 bg-[#444] h-2 rounded-b"></div>
+</div>
+<!-- Blue Wire -->
+<div class="h-full flex flex-col items-center group cursor-pointer">
+<div class="w-3 bg-[#444] h-2 rounded-t"></div>
+<div class="w-2 h-full bg-blue-600 border-x border-black/20 group-hover:brightness-125 transition-all"></div>
+<div class="w-3 bg-[#444] h-2 rounded-b"></div>
+</div>
+<!-- Yellow Wire -->
+<div class="h-full flex flex-col items-center group cursor-pointer">
+<div class="w-3 bg-[#444] h-2 rounded-t"></div>
+<div class="w-2 h-full bg-yellow-500 border-x border-black/20 group-hover:brightness-125 transition-all"></div>
+<div class="w-3 bg-[#444] h-2 rounded-b"></div>
+</div>
+<!-- White Wire -->
+<div class="h-full flex flex-col items-center group cursor-pointer">
+<div class="w-3 bg-[#444] h-2 rounded-t"></div>
+<div class="w-2 h-full bg-gray-200 border-x border-black/20 group-hover:brightness-125 transition-all"></div>
+<div class="w-3 bg-[#444] h-2 rounded-b"></div>
+</div>
+</div>
+</div>
+<!-- TWO COLUMN GRID FOR DIAL AND SWITCHES -->
+<div class="grid grid-cols-2 gap-4 mb-4">
+<!-- MODULE 3: TOGGLE SWITCHES -->
+<div class="bg-[#252525] border-2 border-black/40 rounded-lg p-3">
+<span class="text-[9px] text-gray-400 font-bold uppercase mb-3 block">MODULE 03: LOGIC</span>
+<div class="grid grid-cols-2 gap-y-4 gap-x-2">
+<div class="flex flex-col items-center">
+<span class="text-[8px] text-white/70 mb-1">PWR</span>
+<div class="w-6 h-10 bg-terminal-black rounded relative inner-bezel flex items-center justify-center cursor-pointer">
+<div class="w-2 h-6 bg-gray-400 rounded-full shadow-lg transform -translate-y-1"></div>
+</div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[8px] text-white/70 mb-1">COM</span>
+<div class="w-6 h-10 bg-terminal-black rounded relative inner-bezel flex items-center justify-center cursor-pointer">
+<div class="w-2 h-6 bg-gray-400 rounded-full shadow-lg transform translate-y-1"></div>
+</div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[8px] text-white/70 mb-1">BYP</span>
+<div class="w-6 h-10 bg-terminal-black rounded relative inner-bezel flex items-center justify-center cursor-pointer">
+<div class="w-2 h-6 bg-gray-400 rounded-full shadow-lg transform -translate-y-1"></div>
+</div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[8px] text-white/70 mb-1 text-primary">DET</span>
+<div class="w-6 h-10 bg-terminal-black rounded relative inner-bezel flex items-center justify-center cursor-pointer">
+<div class="w-2 h-6 bg-gray-600 rounded-full shadow-lg transform translate-y-1"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- MODULE 4: ANALOG DIAL -->
+<div class="bg-[#252525] border-2 border-black/40 rounded-lg p-3 flex flex-col items-center">
+<span class="text-[9px] text-gray-400 font-bold uppercase mb-2 block self-start">MODULE 04: ATMOS</span>
+<div class="relative size-24 bg-gray-200 rounded-full border-4 border-black/50 inner-bezel overflow-hidden">
+<!-- Gauge Markings -->
+<div class="absolute inset-2 border-[1px] border-black/10 rounded-full"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-3 bg-primary"></div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-0.5 bg-gray-400"></div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 h-3 bg-gray-400"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-0.5 bg-gray-400"></div>
+<!-- Red Zone -->
+<div class="absolute top-0 right-0 size-12 bg-primary/20 rounded-tr-full"></div>
+<!-- Needle -->
+<div class="absolute top-1/2 left-1/2 w-1 h-12 bg-black origin-bottom -translate-x-1/2 -translate-y-full rotate-[45deg] transition-transform duration-1000">
+<div class="absolute -top-1 left-1/2 -translate-x-1/2 size-2 bg-primary rounded-full"></div>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-3 bg-[#333] rounded-full border border-black shadow"></div>
+<!-- Dial Labels -->
+<span class="absolute bottom-4 left-1/2 -translate-x-1/2 text-[8px] font-bold text-gray-600">PSI x100</span>
+</div>
+<div class="mt-2 flex gap-1">
+<div class="size-1.5 rounded-full bg-green-500 shadow-[0_0_3px_green]"></div>
+<div class="size-1.5 rounded-full bg-gray-700"></div>
+</div>
+</div>
+</div>
+<!-- FOOTER / NAV BAR RE-IMAGINED -->
+<div class="mt-6 flex items-center justify-between bg-black/40 rounded-lg px-4 py-2 border border-white/5">
+<div class="flex items-center gap-3">
+<div class="flex flex-col">
+<span class="text-[8px] text-gray-500 uppercase font-bold">Battery</span>
+<div class="w-16 h-2 bg-gray-800 rounded-full overflow-hidden border border-black">
+<div class="w-3/4 h-full bg-green-600"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-[8px] text-gray-500 uppercase font-bold">Signal</span>
+<div class="flex gap-0.5 items-end h-2">
+<div class="w-1 h-1 bg-primary"></div>
+<div class="w-1 h-1.5 bg-primary"></div>
+<div class="w-1 h-2 bg-primary"></div>
+<div class="w-1 h-2.5 bg-gray-700"></div>
+</div>
+</div>
+</div>
+<button class="bg-primary/20 hover:bg-primary/40 border border-primary text-primary px-3 py-1 rounded text-[10px] font-bold uppercase transition-colors">
+                ABORT CMD
+            </button>
+</div>
+<!-- BOTTOM STICKER -->
+<div class="mt-4 flex justify-center">
+<div class="bg-yellow-400/90 text-black px-4 py-0.5 rotate-1 shadow-md text-[10px] font-black uppercase tracking-tighter">
+                WARNING: VOLATILE MATERIALS INSIDE
+            </div>
+</div>
+</div>
+</body></html>
