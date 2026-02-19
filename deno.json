@@ -24,5 +24,18 @@
         "@std/dotenv": "jsr:@std/dotenv@^0.225.2",
         "@deno/svelte-adapter": "npm:@deno/svelte-adapter@^0.1.1"
 	},
-	"nodeModulesDir": "auto"
+  "nodeModulesDir": "auto",
+  "deploy": {
+    "org": "ignacybalcer",
+    "project": "bombardiro",
+    "include": [
+      "build",
+      ".env"
+    ],
+    "exclude": [
+      "node_modules",
+      ".git"
+    ],
+    "entrypoint": "build/index.js"
+  }
 }
