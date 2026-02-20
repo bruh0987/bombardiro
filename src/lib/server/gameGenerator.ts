@@ -483,26 +483,23 @@ function generateLogic(rng: Seeder, index: number, props: { serialNumber: string
         return false;
     };
     
-    let solutionP = false;
-    let solutionQ = false;
-    let found = false;
+    const validPairs: { p: boolean, q: boolean }[] = [];
     
     for (const p of [false, true]) {
         for (const q of [false, true]) {
             if (evalOp(evalOp(p, valA, op1), evalOp(q, valB, op2), opMain)) {
-                solutionP = p; solutionQ = q; found = true; break;
+                validPairs.push({ p, q });
             }
         }
-        if(found) break;
     }
 
-    // If not found, try again (recursion safe? rng state changes so yes)
-    if (!found) return generateLogic(rng, index, props, rules);
+    // If no solution exists for any P/Q, try again
+    if (validPairs.length === 0) return generateLogic(rng, index, props, rules);
 
     return {
         id: `logic-${index}`,
         type: 'LOGIC',
         data: { expression },
-        rules: { solutionP, solutionQ }
+        rules: { validPairs }
     };
 }

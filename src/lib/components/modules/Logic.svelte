@@ -49,7 +49,6 @@
 
         <!-- Check Button -->
         <button class="px-4 py-2 bg-stone-700 hover:bg-stone-600 active:translate-y-0.5 border-b-4 border-stone-900 active:border-b-0 rounded text-xs font-bold uppercase tracking-widest text-white transition-all"
-            onclick={handleCheck}>
             onclick={handleCheck}
             aria-label="Sprawdź poprawność">
             SPRAWDŹ

@@ -271,9 +271,11 @@ async function handleMessage(socket: WebSocket, data: any) {
                 }
             } else if (module.type === 'LOGIC') {
                 const { p, q } = actionData;
-                const { solutionP, solutionQ } = module.rules;
+                const { validPairs } = module.rules;
                 
-                if (p === solutionP && q === solutionQ) {
+                const isCorrect = validPairs.some((pair: any) => pair.p === p && pair.q === q);
+                
+                if (isCorrect) {
                     solved = true;
                 } else {
                     strike = true;
